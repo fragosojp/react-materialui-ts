@@ -25,6 +25,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));
   const theme = useTheme();
   const { toggleDrawerOpen } = useDrawerContext();
+
   return (
     <Box height="100%" display="flex" flexDirection="column" gap={1}>
       <Box
@@ -40,7 +41,6 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
         )}
 
         <Typography
-          style={{ color: "#00adb5" }}
           overflow="hidden"
           whiteSpace="nowrap"
           textOverflow="ellipsis"

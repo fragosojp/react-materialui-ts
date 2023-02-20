@@ -1,24 +1,23 @@
 import { createTheme } from "@mui/material";
-import { cyan, grey } from "@mui/material/colors";
 
 export const DarkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: grey[700],
-      dark: grey[800],
-      light: grey[500],
-      contrastText: "#ffffff",
+      main: "#265D97",
+      dark: "#003A75",
+      light: "#757ce8",
+      contrastText: "#fff",
     },
     secondary: {
-      main: cyan[500],
-      dark: cyan[400],
-      light: cyan[300],
+      main: "#f44336",
+      dark: "#ba000d",
+      light: "#ff7961",
       contrastText: "#ffffff",
     },
     background: {
-      paper: "#303134",
-      default: "#202124",
+      paper: "#001e3c",
+      default: "#0a1929",
     },
     // text: {
     //   primary: "#00adb5",

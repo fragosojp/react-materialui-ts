@@ -295,9 +295,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                       selected={index === selectedIndex}
                       onClick={(event) => aoClicarItemDoMenu(event, index)}
                     >
-                      {<Icon>{option.icon}</Icon>}
-                      {""}
-                      {option.label}
+                      {<Icon>{option.icon}</Icon>} {option.label}
                     </MenuItem>
                   ))}
                 </MenuList>

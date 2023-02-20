@@ -78,7 +78,6 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
     { label: "Salvar e Voltar", icon: "save" },
     { label: "Apagar", icon: "delete" },
     { label: "Novo", icon: "add" },
-    { label: "Voltar", icon: "arrow_back" },
   ];
 
   const [abrir, setAbrir] = React.useState(false);
@@ -212,31 +211,6 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
       {mostrarBotaoNovoCarregando && <Skeleton width={110} height={60} />}
 
-      {mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando && !smDown && (
-        <Divider variant="middle" orientation="vertical" />
-      )}
-
-      {mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando && !smDown && (
-        <Button
-          variant="outlined"
-          color="primary"
-          disableElevation
-          onClick={aoclicarEmVoltar}
-          startIcon={<Icon>arrow_back</Icon>}
-        >
-          <Typography
-            variant="button"
-            whiteSpace="nowrap"
-            textOverflow="ellipsis"
-            overflow="hidden"
-          >
-            voltar
-          </Typography>
-        </Button>
-      )}
-
-      {mostrarBotaoVoltarCarregando && <Skeleton width={110} height={60} />}
-
       {smDown && (
         <ButtonGroup
           variant="contained"
@@ -304,6 +278,31 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
           </Grow>
         )}
       </Popper>
+
+      {mostrarBotaoVoltar && (
+        <Divider variant="middle" orientation="vertical" />
+      )}
+
+      {mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando && (
+        <Button
+          variant="outlined"
+          color="primary"
+          disableElevation
+          onClick={aoclicarEmVoltar}
+          startIcon={<Icon>arrow_back</Icon>}
+        >
+          <Typography
+            variant="button"
+            whiteSpace="nowrap"
+            textOverflow="ellipsis"
+            overflow="hidden"
+          >
+            voltar
+          </Typography>
+        </Button>
+      )}
+
+      {mostrarBotaoVoltarCarregando && <Skeleton width={110} height={60} />}
     </Box>
   );
 };

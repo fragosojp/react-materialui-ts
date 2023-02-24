@@ -10,8 +10,10 @@ import {
   TableFooter,
   LinearProgress,
   Pagination,
+  IconButton,
+  Icon,
 } from "@mui/material";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import {
   IListagemPessoa,
@@ -26,6 +28,7 @@ export const ListagemDePessoas: React.FC = () => {
   //React Hooks
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = UseDebounce();
+  const navigate = useNavigate();
 
   const [rows, setRows] = useState<IListagemPessoa[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -58,6 +61,21 @@ export const ListagemDePessoas: React.FC = () => {
     });
   }, [pagina, busca]);
 
+  const handleDelete = (id: number) => {
+    if (confirm("Realmente deseja apagar?")) {
+      PessoasServices.getdeleteByIdAll(id).then((result) => {
+        if (result instanceof Error) {
+          alert(result.message);
+        } else {
+          setRows((oldRows) => [
+            ...oldRows.filter((oldRow) => oldRow.id !== id),
+          ]);
+          alert("Registra apagado com sucesso!");
+        }
+      });
+    }
+  };
+
   return (
     <LayoutBaseDePagina
       titulo="Listagem de cidades"
@@ -88,7 +106,17 @@ export const ListagemDePessoas: React.FC = () => {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>
-                <TableCell>Ações</TableCell>
+                <TableCell>
+                  <IconButton size="small" onClick={() => handleDelete(row.id)}>
+                    <Icon>delete</Icon>
+                  </IconButton>
+                  <IconButton
+                    size="small"
+                    onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}
+                  >
+                    <Icon>edit</Icon>
+                  </IconButton>
+                </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
               </TableRow>

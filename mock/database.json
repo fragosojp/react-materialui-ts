@@ -25,18 +25,6 @@
       "nomeCompleto": "C FRAGOSO"
     },
     {
-      "id": 5,
-      "email": "d@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "D FRAGOSO"
-    },
-    {
-      "id": 6,
-      "email": "d@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "D FRAGOSO"
-    },
-    {
       "id": 7,
       "email": "d@email.com",
       "cidadeId": 1,

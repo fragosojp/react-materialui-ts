@@ -1,5 +1,7 @@
 import { useCallback, useRef } from "react";
-
+/**
+ * função para impedir que o frontEnd faças pesquisas desnecessarias ao backEnd
+ */
 export const UseDebounce = (delay = 300, noteDelayInFristTime = true) => {
   const isFirsTime = useRef(noteDelayInFristTime);
   const debouncing = useRef<NodeJS.Timeout>();

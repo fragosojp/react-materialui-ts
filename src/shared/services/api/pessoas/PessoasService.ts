@@ -95,7 +95,7 @@ const updateById = async (
   }
 };
 
-const getdeleteByIdAll = async (id: number): Promise<void | Error> => {
+const deleteById = async (id: number): Promise<void | Error> => {
   try {
     await Api.delete(`/pessoas/${id}`);
   } catch (error) {
@@ -111,5 +111,5 @@ export const PessoasServices = {
   getById,
   create,
   updateById,
-  getdeleteByIdAll,
+  deleteById,
 };

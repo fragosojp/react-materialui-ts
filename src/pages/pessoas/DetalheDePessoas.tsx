@@ -1,7 +1,9 @@
-import LinearProgress from "@mui/material/LinearProgress";
+import { Form } from "@unform/web";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import { FerramentasDeDetalhe } from "../../shared/components";
+import { VTextField } from "../../shared/forms";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import { PessoasServices } from "../../shared/services/api/pessoas/PessoasService";
 
@@ -23,7 +25,6 @@ export const DetalheDePessoas: React.FC = () => {
           navigate("/pessoas");
         } else {
           setNome(result.nomeCompleto);
-          console.log(result);
         }
       });
     }
@@ -62,8 +63,11 @@ export const DetalheDePessoas: React.FC = () => {
         />
       }
     >
-      {isLoading && <LinearProgress variant="indeterminate" />}
-      <p>Teste {id}</p>
+      <Form onSubmit={(dados) => console.log(dados)}>
+        <VTextField name="nomeCompleto" />
+
+        <button type="submit">Submit</button>
+      </Form>
     </LayoutBaseDePagina>
   );
 };

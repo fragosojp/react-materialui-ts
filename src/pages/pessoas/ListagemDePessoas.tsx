@@ -7,6 +7,8 @@ import {
   TableCell,
   TableBody,
   Paper,
+  TableFooter,
+  LinearProgress,
 } from "@mui/material";
 import { useSearchParams } from "react-router-dom";
 
@@ -17,6 +19,7 @@ import {
 import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import { UseDebounce } from "../../shared/hooks";
+import { Environment } from "../../shared/environment";
 
 export const ListagemDePessoas: React.FC = () => {
   //React Hooks
@@ -86,6 +89,18 @@ export const ListagemDePessoas: React.FC = () => {
               </TableRow>
             ))}
           </TableBody>
+          {totalCount === 0 && !isLoading && (
+            <caption>{Environment.LISTAGEM_VAZIA}</caption>
+          )}
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <LinearProgress variant="indeterminate" />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
         </Table>
       </TableContainer>
     </LayoutBaseDePagina>

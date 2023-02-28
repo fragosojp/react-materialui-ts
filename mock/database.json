@@ -1,12 +1,6 @@
 {
   "pessoas": [
     {
-      "id": 1,
-      "email": "joao@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "JOAO FRAGOSO"
-    },
-    {
       "id": 2,
       "email": "a@email.com",
       "cidadeId": 1,
@@ -44,12 +38,6 @@
     },
     {
       "id": 10,
-      "email": "d@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "D FRAGOSO"
-    },
-    {
-      "id": 11,
       "email": "d@email.com",
       "cidadeId": 1,
       "nomeCompleto": "D FRAGOSO"

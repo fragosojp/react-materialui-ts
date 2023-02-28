@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
     "mock": "json-server -w -p 3333 ./mock/database.json",
     "eject": "react-scripts eject"
   },

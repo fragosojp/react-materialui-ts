@@ -42,5 +42,19 @@
       "cidadeId": 2,
       "id": 16
     }
+  ],
+  "cidades": [
+    {
+      "id": 1,
+      "nome": "Pinhais"
+    },
+    {
+      "nome": "Curitiba",
+      "id": 2
+    },
+    {
+      "nome": "Araucaria",
+      "id": 3
+    }
   ]
 }
